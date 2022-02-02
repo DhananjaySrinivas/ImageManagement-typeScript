@@ -1,0 +1,12 @@
+.card {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    width: 180px;
+    height: 130px;
+    border-radius: 4px; 
+    margin: 3px;
+}
+.card:hover {
+    background: #e7eaf1;
+}

@@ -1,0 +1,39 @@
+.caption {
+  position: absolute;
+  width: 343px;
+  height: 16px;
+  text-align: left;
+  top: 84px;
+  padding-top: 7px;
+  padding-bottom: 12px;
+  font-family: SF Pro Text;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #242931;
+}
+
+.img {
+  object-fit: cover;
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 6.45%;
+  bottom: 22.58%;
+  border-radius: 4px;
+  height: 88px;
+  width: 144px;
+}
+
+.checkbox {
+  position: absolute;
+  left: 1.5%;
+  right: 88.5%;
+  top: 2.23%;
+  bottom: 84.87%;
+  background: linear-gradient(0deg, #f1f5fa 0%, #fdfeff 100%);
+  border: 1px solid rgba(92, 93, 95, 0.164);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
