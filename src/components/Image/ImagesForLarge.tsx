@@ -1,10 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
-import { galleryActions } from "../../store/images-slice";
+import { galleryActions } from "../../store/images-slice.js";
 import classes from "./ImagesForLarge.module.css";
+type value={
+  url: any,
+  description: any,
+  name: any,
+height :any,
+width:any 
+}
 
-function ImageLarger({ name, description, url, height, width }) {
+const  ImageLarger:React.FC<value> = ({ name, description, url, height, width }) =>{
   const dispatch = useDispatch();
-  const selectedImage = useSelector((state) => state.gallery.dummyImages);
+  const selectedImage = useSelector((state:any) => state.gallery.dummyImages);
   const imageSubmitHandler = () => {
     dispatch(galleryActions.addToGallery(selectedImage));
   };

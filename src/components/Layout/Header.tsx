@@ -1,6 +1,7 @@
+import { MouseEventHandler } from 'react';
 import classes from './Header.module.css';
 
-const Header = (props) => {
+const Header = (props: { showAddImage: MouseEventHandler<HTMLButtonElement> | undefined; }) => {
     return (
         <div className={classes.header}>
             <h1>Media Library</h1>

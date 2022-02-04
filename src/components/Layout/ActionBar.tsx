@@ -1,39 +1,39 @@
 import { useDispatch} from "react-redux";
-import { galleryActions } from "../../store/images-slice";
+import { galleryActions } from "../../store/images-slice.js";
 import classes from "./ActionBar.module.css";
 
 const ActionBar = () => {
   const dispatch = useDispatch();
 
-  const selectAllChangeHandler = (event) => {
+  const selectAllChangeHandler = (event:React.FormEvent<HTMLInputElement> ) => {
     event.preventDefault();
     dispatch(galleryActions.updateSelectAll());
   };
   
-  const deleteClickHandler = (event) => {
+  const deleteClickHandler = (event:React.MouseEvent<HTMLButtonElement> ) => {
     event.preventDefault();
     dispatch(galleryActions.removeImgFromGallery());
   };
 
 
-  const searchChangeHandler = (event) => {
+  const searchChangeHandler = (event:React.FormEvent<HTMLInputElement>) => {
     event.preventDefault();
-    const searchValue = event.target.value;
+    const searchValue =event.currentTarget.value;;
     dispatch(galleryActions.updateSearchTerm(searchValue));
   };
 
-  const titleBySortHandler = (event) => {
+  const titleBySortHandler = (event:React.MouseEvent<HTMLButtonElement> ) => {
     event.preventDefault();
  dispatch(galleryActions.sortByTitle());
   };
 
-  const dateBySortHandler = (event) => {
+  const dateBySortHandler = (event:React.MouseEvent<HTMLButtonElement> ) => {
     event.preventDefault();
 
     dispatch(galleryActions.sortByDate());
   };
 
-  const sizeBySortHandler = (event) => {
+  const sizeBySortHandler = (event:React.MouseEvent<HTMLButtonElement> ) => {
     event.preventDefault();
 
     dispatch(galleryActions.sortBySize());

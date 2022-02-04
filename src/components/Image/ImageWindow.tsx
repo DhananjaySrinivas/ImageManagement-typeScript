@@ -3,15 +3,15 @@ import Modal from "../UI/Modal";
 import classes from "./ImageWindow.module.css";
 import Search from "./Search";
 
-const AddImageWindow = (props) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const searchClickHandler = (event) => {
+const AddImageWindow = (props: { onClose: any; }) => {
+  const [searchTerm, setSearchTerm] = useState<string>();
+  const searchClickHandler = (event :React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
   };
 
-  const SearchEnteredHandler = (e) => {
+  const SearchEnteredHandler =(e:React.FormEvent<HTMLInputElement> ) => {
     e.preventDefault();
-    let value = e.target.value;
+    let value = e.currentTarget.value;
     setSearchTerm(value);
   };
 
@@ -38,7 +38,7 @@ const AddImageWindow = (props) => {
           />
         </div>
         <div>
-          <button className={classes.searchButton} onClick={searchClickHandler}>
+          <button type="button" className={classes.searchButton} onClick={searchClickHandler}>
             Search
           </button>
 

@@ -4,7 +4,7 @@ import Header from './components/Layout/Header';
 import ActionBar from './components/Layout/ActionBar'
 import ImageWindow from './components/Image/ImageWindow';
 
- const App=()=> {
+ const App:React.FC=()=> {
   const [showImageWindow, setShowImageWindow] = useState(false);
   
   const showImageHandler = () => {

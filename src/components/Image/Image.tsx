@@ -1,8 +1,21 @@
 import { useDispatch } from "react-redux";
-import { galleryActions } from "../../store/images-slice";
+import { galleryActions } from "../../store/images-slice.js";
 import classes from "./Image.module.css";
 
-function Image({
+type value={
+  id:any,
+  url: any,
+  description: any,
+  name: any,
+  isChecked: any,
+  height:any,
+  width :any,
+  showSelectButton: boolean,
+  onClick : any,
+  className:string,
+}
+
+const  Image:React.FC<value>=({
   id,
   url,
   description,
@@ -11,7 +24,7 @@ function Image({
   showSelectButton,
   onClick,
   className,
-}) {
+}) => {
   const dispatch = useDispatch();
   const imageCheckedHandler = () => {
     dispatch(galleryActions.updateImgToSelected(id));
@@ -42,5 +55,6 @@ Image.defaultProps = {
   showSelectButton: true,
   className: "",
 };
+
 
 export default Image;
